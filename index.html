@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+     var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+ // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+clevertap.account.push({"id": "TEST-KK4-R6K-565Z"});
+clevertap.privacy.push({optOut: true}); //set the flag to true, if the user of the device opts out of sharing their data
+clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+ (function () {
+		 var wzrk = document.createElement('script');
+		 wzrk.type = 'text/javascript';
+		 wzrk.async = true;
+		 wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+		 var s = document.getElementsByTagName('script')[0];
+		 s.parentNode.insertBefore(wzrk, s);
+  })();
+</script>
+<script>
+ var pushData = function() {
+
+clevertap.profile.push({
+ "Site": {
+   "product_Id": "1", 
+   "image": "https://d35fo82fjcw0y8.cloudfront.net/2018/07/26020307/customer-success-clevertap.jpg",
+   "productName": "clevertap",
+   "email": "dk+geetanjali@clevertap.com"
+ }
+});
+
+}
+</script>
+</head>
+<body>
+<h1>CleverTap</h1>
+
+<p>This is the sample page</p>
+
+<button type="button" class="block" onclick="pushData()">Push Notification</button>
+
+
+</body>
+</html>
